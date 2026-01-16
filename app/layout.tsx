@@ -6,7 +6,7 @@ const pixelFont = Press_Start_2P({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-pixel', 
-  display: 'swap', // Mejora el rendimiento de carga
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -14,21 +14,24 @@ export const metadata: Metadata = {
   description: "Classic Tetris experience with Next.js",
 };
 
-// Definimos la interfaz para los props del layout
+// 1. Corregimos la interfaz: params ahora es una Promise
 interface RootLayoutProps {
   children: React.ReactNode;
-  params: { lang: string };
+  params: Promise<{ lang: string }>; 
 }
 
-export default function RootLayout({
+// 2. Convertimos el componente en asíncrono (async)
+export default async function RootLayout({
   children,
   params,
 }: RootLayoutProps) {
-  // Nota: En layouts de Next 15, params puede ser síncrono o promesa.
-  // Si usas Next 15, es mejor dejar que 'lang' venga de la URL directamente.
+  
+  // 3. Esperamos a que la promesa de params se resuelva
+  const resolvedParams = await params;
+  const lang = resolvedParams?.lang || "en";
   
   return (
-    <html lang={params?.lang || "en"}> 
+    <html lang={lang}> 
       <body className={`${pixelFont.variable} font-sans antialiased bg-[#05050a]`}>
         {children}
       </body>

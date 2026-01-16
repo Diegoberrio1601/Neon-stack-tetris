@@ -2,22 +2,23 @@ import { getDictionary } from "./dictionaries";
 import GameClient from "./GameClient";
 import { Dictionary } from "@/types/game";
 
-// Definimos el tipo de los params de la página
+// Next.js 16 requiere que params sea una Promesa en el tipado de la página
 interface PageProps {
   params: Promise<{ lang: string }>;
 }
 
 export default async function Page({ params }: PageProps) {
-  // En Next.js 15, debemos esperar (await) a los params
-  const { lang } = await params;
+  // 1. Resolvemos la promesa de los parámetros
+  const resolvedParams = await params;
+  const lang = resolvedParams?.lang || "en";
   
-  // Como ya tipamos getDictionary antes, 'dict' aquí ya no es 'any'
+  // 2. Cargamos el diccionario (getDictionary debe ser async)
   const dict: Dictionary = await getDictionary(lang);
 
   return (
-    <main>
-      {/* Si en GameClient decidiste quitar 'lang' porque no se usaba, 
-          borra el atributo lang={lang} de aquí abajo.
+    <main className="min-h-screen bg-[#05050a]">
+      {/* Pasamos el diccionario tipado y el idioma al cliente. 
+          GameClient ahora recibirá los datos procesados por el servidor.
       */}
       <GameClient dict={dict} lang={lang} />
     </main>
