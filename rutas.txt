@@ -1,0 +1,54 @@
+.
+├── ./.DS_Store
+├── ./.gitignore
+├── ./README.md
+├── ./app
+│   ├── ./app/[lang]
+│   │   ├── ./app/[lang]/GameClient.tsx
+│   │   ├── ./app/[lang]/dictionaries.ts
+│   │   └── ./app/[lang]/page.tsx
+│   ├── ./app/favicon.ico
+│   ├── ./app/globals.css
+│   └── ./app/layout.tsx
+├── ./components
+│   ├── ./components/AudioController.tsx
+│   ├── ./components/BatteryIndicator.tsx
+│   ├── ./components/GameBoard.tsx
+│   ├── ./components/GameOverScreen.tsx
+│   ├── ./components/GameScreen.tsx
+│   ├── ./components/InstructionsModal.tsx
+│   ├── ./components/MainMenu.tsx
+│   ├── ./components/NextPieceDisplay.tsx
+│   ├── ./components/PauseMenu.tsx
+│   ├── ./components/SocialLinks.tsx
+│   └── ./components/TetrisBackground.tsx
+├── ./constants
+│   └── ./constants/tetrominos.ts
+├── ./dictionaries
+│   ├── ./dictionaries/en.json
+│   └── ./dictionaries/es.json
+├── ./eslint.config.mjs
+├── ./hooks
+│   └── ./hooks/useTetris.ts
+├── ./middleware.ts
+├── ./next-env.d.ts
+├── ./next.config.ts
+├── ./package-lock.json
+├── ./package.json
+├── ./postcss.config.mjs
+├── ./public
+│   ├── ./public/.DS_Store
+│   ├── ./public/file.svg
+│   ├── ./public/globe.svg
+│   ├── ./public/next.svg
+│   ├── ./public/sounds
+│   │   ├── ./public/sounds/.DS_Store
+│   │   └── ./public/sounds/tetrisgameboy1-gameboy.mp3
+│   ├── ./public/vercel.svg
+│   └── ./public/window.svg
+├── ./rutas.txt
+├── ./tsconfig.json
+└── ./types
+    └── ./types/game.ts
+
+10 directories, 42 files

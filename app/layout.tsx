@@ -1,34 +1,3 @@
-// import type { Metadata } from "next";
-// import { Press_Start_2P } from 'next/font/google'; // Importamos la que queremos
-// import "./globals.css";
-
-// // 1. Inicializamos la fuente y le asignamos la variable CSS
-// const pixelFont = Press_Start_2P({
-//   weight: '400',
-//   subsets: ['latin'],
-//   variable: '--font-pixel', 
-// });
-
-// export const metadata: Metadata = {
-//   title: "Tetris Pixel Game",
-//   description: "Juego de Tetris con Next.js",
-// };
-
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-//     <html lang="en">
-//       {/* 2. IMPORTANTE: Agregamos pixelFont.variable aquí */}
-//       <body className={`${pixelFont.variable} antialiased`}>
-//         {children}
-//       </body>
-//     </html>
-//   );
-// }
-
 import type { Metadata } from "next";
 import { Press_Start_2P } from 'next/font/google';
 import "./globals.css";

@@ -89,3 +89,11 @@ export type GameBoardGrid = BoardCell[][];
 export interface DictComponentProps {
   dict: Dictionary;
 }
+
+/**
+ * Props específicos para el componente de Audio
+ */
+export interface AudioControllerProps {
+  isMuted: boolean;
+  onToggle: () => void;
+}
