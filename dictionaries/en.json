@@ -1,0 +1,45 @@
+{
+  "menu": {
+    "lets": "let's",
+    "play": "Play.",
+    "together": "Together",
+    "start": "START",
+    "devBy": "Dev by",
+    "language": "Language"
+  },
+  "game": {
+    "highScore": "Best Score",
+    "maxLines": "Line Record",
+    "currentLines": "Current Lines",
+    "currentPoints": "Current Points",
+    "nextPiece": "Next Piece",
+    "quit": "[ Q ] QUIT"
+  },
+  "instructions": {
+    "title": "Player Guide",
+    "move": "MOVE PIECE",
+    "softDrop": "SOFT DROP",
+    "hardDrop": "HARD DROP",
+    "rotate": "ROTATE",
+    "restart": "RESTART",
+    "quitMenu": "QUIT MENU",
+    "pressEnter": "PRESS [ ENTER ] TO START"
+  },
+  "pause": {
+    "title": "PAUSED",
+    "controls": "- CONTROLS -",
+    "move": "MOVE",
+    "softDrop": "SOFT DROP",
+    "hardDrop": "HARD DROP",
+    "rotate": "ROTATE",
+    "restart": "RESTART",
+    "quitMenu": "QUIT TO MENU"
+  },
+  "gameOver": {
+    "title": "GAME OVER",
+    "finalScore": "FINAL SCORE",
+    "lines": "LINES CLEARED",
+    "retryBtn": "[ESC] RETRY",
+    "quitHint": "OR PRESS [Q] TO EXIT"
+  }
+}

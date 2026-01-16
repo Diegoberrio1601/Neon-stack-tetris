@@ -1,0 +1,45 @@
+{
+  "menu": {
+    "lets": "Vamos a",
+    "play": "Jugar.",
+    "together": "Juntos",
+    "start": "INICIAR",
+    "devBy": "Dev por",
+    "language": "Lenguaje"
+  },
+  "game": {
+    "highScore": "Mejor Puntuación",
+    "maxLines": "Récord Líneas",
+    "currentLines": "Líneas actual",
+    "currentPoints": "Puntos actual",
+    "nextPiece": "Siguiente Pieza",
+    "quit": "[ Q ] SALIR"
+  },
+  "instructions": {
+    "title": "Guía del Jugador",
+    "move": "MOVER PIEZA",
+    "softDrop": "BAJAR LENTO",
+    "hardDrop": "CAÍDA RÁPIDA",
+    "rotate": "ROTAR",
+    "restart": "REINICIAR",
+    "quitMenu": "SALIR AL MENÚ",
+    "pressEnter": "PRESIONA [ ENTER ] PARA EMPEZAR"
+  },
+  "pause": {
+    "title": "PAUSADO",
+    "controls": "- CONTROLES -",
+    "move": "MOVER",
+    "softDrop": "BAJAR LENTO",
+    "hardDrop": "CAÍDA RÁPIDA",
+    "rotate": "ROTAR",
+    "restart": "REINICIAR",
+    "quitMenu": "SALIR AL MENÚ"
+  },
+  "gameOver": {
+    "title": "FIN DEL JUEGO",
+    "finalScore": "PUNTUACIÓN FINAL",
+    "lines": "LÍNEAS COMPLETADAS",
+    "retryBtn": "[ESC] REINTENTAR",
+    "quitHint": "O PRESIONA [Q] PARA SALIR"
+  }
+}

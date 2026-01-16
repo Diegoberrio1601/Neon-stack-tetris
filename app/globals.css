@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
+@theme {
+  /* Vinculamos la variable de Next.js al tema de Tailwind */
+  --font-pixel: var(--font-pixel); 
+
+  --color-game-bg: #05050a;
+  --color-game-blue: #3db5e5;
+  --color-game-orange: #f14e1c;
+  --color-game-yellow: #f5bb00;
+  --color-game-cyan: #22d3ee;
+  
+  --shadow-pixel: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-neon: 0 0 15px rgba(34, 211, 238, 0.3);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Fondo oscuro para evitar el destello blanco al cargar */
+  --background: #05050a;
+  --foreground: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Soporte para modo claro/oscuro del sistema si lo necesitas */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #05050a;
+    --foreground: #ffffff;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Prioriza la fuente pixelada */
+  font-family: var(--font-pixel), 'Courier New', Courier, monospace;
+  
+  /* Textura de micro-puntos retro */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+  
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Evita scrolls accidentales durante el juego */
+}
+
+/* Utilidad para textos pixelados */
+.pixel-text {
+  font-family: var(--font-pixel);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Bloque estilo Arcade/Retro */
+.pixel-block {
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 15, 26, 0.8);
+  backdrop-filter: blur(4px);
+  position: relative;
+}
+
+/* Efecto de líneas de TV (Scanlines) opcional */
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.1) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Animación de parpadeo retro */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+.animate-retro-blink {
+  animation: blink 1.5s infinite;
 }
