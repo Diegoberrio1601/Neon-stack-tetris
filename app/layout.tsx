@@ -14,20 +14,22 @@ export const metadata: Metadata = {
   description: "Classic Tetris experience with Next.js",
 };
 
-// 1. Corregimos la interfaz: params ahora es una Promise
+// La clave es hacer que lang sea OPCIONAL (?) 
+// porque en la raíz "/" params viene vacío "{}"
 interface RootLayoutProps {
   children: React.ReactNode;
-  params: Promise<{ lang: string }>; 
+  params: Promise<{ lang?: string }>; 
 }
 
-// 2. Convertimos el componente en asíncrono (async)
 export default async function RootLayout({
   children,
   params,
 }: RootLayoutProps) {
   
-  // 3. Esperamos a que la promesa de params se resuelva
+  // Esperamos los parámetros
   const resolvedParams = await params;
+  
+  // Si lang no viene (en la raíz), usamos "en" por defecto
   const lang = resolvedParams?.lang || "en";
   
   return (
